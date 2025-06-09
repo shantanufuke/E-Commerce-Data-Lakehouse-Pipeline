@@ -1,39 +1,24 @@
 # 🛒 E-Commerce Data Lakehouse Pipeline
 
-An end-to-end data engineering pipeline for processing e-commerce data using **Azure Data Factory**, **Azure Data Lake Gen2**, and **Azure Databricks** with a **medallion architecture** approach (Bronze → Silver → Gold).
+Built an end-to-end data pipeline using Azure and Databricks to process e-commerce data following the **Medallion Architecture**.
 
-![image](https://github.com/user-attachments/assets/1b45adb8-13b6-40c9-a280-c7ad6c69d37a)
+### 📦 **Data Ingestion**
+- Stored raw CSV files in **Azure Data Lake Gen2**.
+- Created automated pipelines using **Azure Data Factory (ADF)** to convert these files into **Parquet format** and move them to a separate container.
+- Configured **event-based triggers** to automatically start the workflow when new files arrived.
 
-## 🚀 Project Workflow
+### 🔄 **Transformation & Storage**
+- Used **Azure Databricks (PySpark)** to implement **Bronze, Silver, and Gold layers** using **Delta Lake**.
+- Performed data cleaning, deduplication, and enrichment.
+- Generated a unified Gold table for reporting and analytics.
+- All **Databricks notebooks** were auto-triggered on new file arrivals.
 
-1. **Raw Data Ingestion to Azure Data Lake**
-   - E-commerce data files in CSV format are stored in the `raw/` folder of **Azure Data Lake Gen2**.
-   - **Azure Data Factory (ADF)** pipelines ingest and stage the files.
-   - Files are converted to **Parquet format** and moved to a new container.
-   - An **event-based trigger** initiates the workflow automatically upon file arrival.
+### 📑 **Data Quality & Processing**
+- Labeled files as **processed** or **unprocessed** to maintain data traceability and pipeline health.
 
-2. **Transformation with Azure Databricks**
-   - **Databricks notebooks** process staged files from the Bronze layer.
-   - Data is cleaned, deduplicated, typecast, and enriched using **PySpark**.
-   - Transformed data is written to **Delta tables** in Silver and Gold layers using the **Medallion Architecture**.
-   - Files are categorized as **processed** or **unprocessed** for traceability.
+### 📊 **Analysis & Visualization**
+- Queried the Gold layer using **Databricks SQL Editor**.
 
-3. **Analytics & Visualization**
-   - Gold layer data is queried using **Databricks SQL Editor**.
-   - Dashboards are created to analyze various e-commerce insights such as:
-     - Sales performance
-     - Customer behavior
-     - Product trends
+### 🧰 Tech Stack
 
-## 🧰 Tech Stack
-
-- Azure Data Lake Gen2  
-- Azure Data Factory  
-- Azure Databricks  
-- PySpark  
-- Delta Lake  
-- SQL  
-- Parquet  
-- Databricks SQL  
-- GitHub
-
+**Azure Data Lake Gen2** · **Azure Data Factory** · **Azure Databricks** · **PySpark** · **Delta Lake** · **SQL** · **Parquet** · **GitHub**
