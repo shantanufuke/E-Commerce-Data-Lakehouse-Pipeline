@@ -1,5 +1,7 @@
 # 🛒 E-Commerce Data Lakehouse Pipeline
 
+![image](https://github.com/user-attachments/assets/240d0d9f-e137-41cd-adea-08ac9cbd3d69)
+
 Built an end-to-end data pipeline using Azure and Databricks to process e-commerce data following the **Medallion Architecture**.
 
 ### 📦 **Data Ingestion**
