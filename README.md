@@ -1,6 +1,6 @@
 # 🛒 E-Commerce Data Lakehouse Pipeline
 
-![image](https://github.com/user-attachments/assets/c7d05302-cbc1-41ca-b112-6a040489dceb)
+<img width="1192" alt="Screenshot 2025-06-15 at 11 29 01 PM" src="https://github.com/user-attachments/assets/813fd719-9b7f-4d66-843b-c9bf65bb60d9" />
 
 This project demonstrates an end-to-end data lakehouse solution for e-commerce data, implemented using **Azure Data Lake Gen2**, **Azure Data Factory (ADF)**, and **Azure Databricks (PySpark)**.  
 It follows the **Medallion Architecture** to enable scalable, reliable, and high-quality analytics.
