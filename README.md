@@ -1,26 +1,29 @@
 # 🛒 E-Commerce Data Lakehouse Pipeline
 
-![image](https://github.com/user-attachments/assets/c7d05302-cbc1-41ca-b112-6a040489dceb)
+Built an end-to-end data pipeline on **Azure** to process e-commerce data following the **Medallion Architecture**.
 
-Built an end-to-end data pipeline using Azure and Databricks to process e-commerce data following the **Medallion Architecture**.
+---
 
-### 📦 **Data Ingestion**
-- Stored raw CSV files in **Azure Data Lake Gen2**.
-- Created automated pipelines using **Azure Data Factory (ADF)** to convert these files into **Parquet format** and move them to a separate container.
-- Configured **event-based triggers** to automatically start the workflow when new files arrived.
+## 📦 Data Ingestion
 
-### 🔄 **Transformation & Storage**
-- Used **Azure Databricks (PySpark)** to implement **Bronze, Silver, and Gold layers** using **Delta Lake**.
-- Performed data cleaning, deduplication, and enrichment.
-- Generated a unified Gold table for reporting and analytics.
-- All **Databricks notebooks** were auto-triggered on new file arrivals.
+- Raw CSV files are stored in **Azure Data Lake Gen2** (`landing-zone-1`) under separate folders for users, buyers, sellers, and countries.
+- Developed **two Azure Data Factory (ADF) pipelines**:
+  - One pipeline for user data
+  - One pipeline for other entities
+- Each pipeline **automatically converts new CSV files to Parquet format** and moves them to a separate container (`landing-zone-2`) for downstream processing.
+- **Event-based triggers** in ADF ensure pipelines run automatically when new files arrive.
 
-### 📑 **Data Quality & Processing**
-- Labeled files as **processed** or **unprocessed** to maintain data traceability and pipeline health.
+---
 
-### 📊 **Analysis & Visualization**
-- Queried the Gold layer using **Databricks SQL Editor**.
+## 🔄 Transformation & Storage
 
-### 🧰 Tech Stack
+- Used **Azure Databricks (PySpark)** notebooks to implement **Bronze, Silver, and Gold layers** using **Delta Lake** for scalable data transformation and storage.
+- Performed data cleaning, deduplication, and basic enrichment.
 
-**Azure Data Lake Gen2** · **Azure Data Factory** · **Azure Databricks** · **PySpark** · **Delta Lake** · **SQL** · **Parquet** · **GitHub**
+---
+
+## 🧰 Tech Stack
+
+**Azure Data Lake Gen2** · **Azure Data Factory** · **Azure Databricks** · **PySpark** · **Delta Lake** · **Parquet** · **SQL** · **GitHub**
+
+---
